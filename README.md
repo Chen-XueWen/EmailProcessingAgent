@@ -5,4 +5,4 @@
 
 LLM = "meta-llama/Llama-3.3-70B-Instruct"
 
-But OpenAI is better for Langchain
+But OpenAI is better for Langchain however also more expensive
