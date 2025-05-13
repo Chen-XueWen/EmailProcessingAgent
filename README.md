@@ -1,0 +1,2 @@
+# EmailProcessingAgent
+Experimenting with Langchain
