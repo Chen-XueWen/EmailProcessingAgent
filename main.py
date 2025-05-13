@@ -45,8 +45,8 @@ async def main():
     def make_email(sender, subj, body):
         return {"sender": sender, "subject": subj, "body": body}
 
-    legit = make_email("Joker", "Found you Batman!", "I know you're Batman. I have proof!")
-    spam = make_email("Crypto bro", "Best investment of 2025", "Buy my ALT coin now!")
+    legit = make_email(sender="john.smith@example.com", subj="Question about your services", body="Dear Mr. Hugg, I was referred to you by a colleague and I'm interested in learning more about your consulting services. Could we schedule a call next week? Best regards, John Smith")
+    spam = make_email(sender="Crypto bro", subj="The best investment of 2025", body="Mr Wayne, I just launched an ALT coin and want you to buy some !")
 
     print("\nProcessing legitimate email...")
     compiled.invoke({"email": legit, "is_spam": None, "spam_reason": None,
@@ -65,11 +65,11 @@ async def main():
     )
 
     # Draw graph
-    compiled.get_graph().draw_mermaid_png()
+    compiled.get_graph().draw_mermaid_png(output_file_path='./compiled_graph.png')
 
 if __name__ == "__main__":
-    os.environ["TOGETHER_API_KEY"] = os.getenv("TOGETHER_API_KEY", "YOUR_API_KEY")
-    os.environ["LANGFUSE_PUBLIC_KEY"] = os.getenv("LANGFUSE_PUBLIC_KEY", "YOUR_PUBLIC_KEY")
-    os.environ["LANGFUSE_SECRET_KEY"] = os.getenv("LANGFUSE_SECRET_KEY", "YOUR_SECRET_KEY")
+    os.environ["TOGETHER_API_KEY"] = "e6f6c6102549624c7b189476f2aee0398f7b69748a22191423ef852d86fcc31f"
+    os.environ["LANGFUSE_PUBLIC_KEY"] = "pk-lf-ff390ffa-108c-4d03-9739-2f57b7be26b8" 
+    os.environ["LANGFUSE_SECRET_KEY"] = "sk-lf-b5c0e3f5-6704-4d6a-b0f7-1ddf5f03996b"
     os.environ["LANGFUSE_HOST"] = os.getenv("LANGFUSE_HOST", "https://us.cloud.langfuse.com")
     asyncio.run(main())
