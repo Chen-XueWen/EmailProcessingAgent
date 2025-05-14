@@ -1,4 +1,4 @@
-# Email Processing with Langchain Framework
+# Email Processing with Langgraph Framework
 1. Spam or not Spam
 2. Spam = Go to trash
 3. Not Spam = Draft a response and send the email to Mr. Wayne
